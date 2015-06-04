@@ -1,0 +1,31 @@
+<template name="issueSubmit">
+  <form class="main form page">
+    <div class="form-group {{errorClass 'title'}}">
+      <label class="control-label" for="title">Title</label>
+      <div class="controls">
+          <input name="title" id="title" type="text" value="" placeholder="Name your issue" class="form-control"/>
+          <span class="help-block">{{errorMessage 'title'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'description'}}">
+      <label class="control-label" for="description">Description</label>
+      <div class="controls">
+          <input name="description" id="description" type="text" value="" placeholder="Describe your issue" class="form-control"/>
+          <span class="help-block">{{errorMessage 'description'}}</span>
+      </div>
+    </div>    
+    <div class="form-group {{errorClass 'gps'}}">
+      <label class="control-label" for="gps">GPS</label>
+      <div class="controls">
+          <input name="gps" id="gps" type="text" value="{{gps}}" placeholder="GPS coordinates of the issue" class="form-control"/>
+          <span class="help-block">{{errorMessage 'gps'}}</span>
+      </div>
+      
+      <div class="map-container">
+    {{> googleMap name="newIssueMap" options=newIssueMapOptions}}
+  </div>
+      
+    </div>    
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+  </form>
+</template>

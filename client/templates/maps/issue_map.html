@@ -1,0 +1,14 @@
+<!-- http://meteorcapture.com/how-to-create-a-reactive-google-map/ -->
+ 
+
+ <template name="map">
+  <h1>Issue heat map</h1>
+  <p>This map will display issues and their severity</p>
+   <div class="map-container">
+    {{> googleMap name="issueMap" options=issueMapOptions}}
+  </div>
+  
+{{#each issues}}
+        {{> issueItem}}
+{{/each}}  
+</template>

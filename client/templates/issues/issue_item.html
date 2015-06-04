@@ -1,0 +1,17 @@
+<template name="issueItem">
+  <div class="issue">
+    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
+    <div class="issue-content">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <p>GPS coordinates: {{gps}}</p>
+       <p>
+        {{pluralize votes "Vote"}},
+        submitted by {{author}},
+        <a href="{{pathFor 'issuePage'}}">{{pluralize commentsCount "comment"}}</a>
+        {{#if ownIssue}}<a href="{{pathFor 'issueEdit'}}">Edit</a>{{/if}}
+      </p>
+    </div>
+    <a href="{{pathFor 'issuePage'}}" class="discuss btn btn-default">Discuss</a>
+  </div>
+</template>
